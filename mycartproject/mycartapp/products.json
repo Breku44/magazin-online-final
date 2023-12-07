@@ -1,0 +1,12 @@
+[
+    {"id": 1, "name": "Intel CPU", "price": 500.00, "quantity": 10, "cores": 4, "clock_speed": 3.2},
+    {"id": 2, "name": "NVIDIA GPU", "price": 800.00, "quantity": 5, "memory_size": 8, "gpu_speed": 1500.0},
+    {"id": 3, "name": "AMD Ryzen 5", "price": 600.00, "quantity": 8, "cores": 6, "clock_speed": 3.6},
+    {"id": 4, "name": "Intel Core i5", "price": 700.00, "quantity": 12, "cores": 6, "clock_speed": 4.2},
+    {"id": 5, "name": "Intel Core i7", "price": 700.00, "quantity": 12, "cores": 8, "clock_speed": 4.0},
+    {"id": 6, "name": "AMD Ryzen 9", "price": 850.00, "quantity": 6, "cores": 12, "clock_speed": 4.5},
+    {"id": 7, "name": "NVIDIA GeForce GTX 1660 Ti", "price": 400.00, "quantity": 10, "memory_size": 6, "gpu_speed": 1400.0},
+    {"id": 8, "name": "AMD Radeon RX 5600 XT", "price": 600.00, "quantity": 8, "memory_size": 6, "gpu_speed": 1300.0},
+    {"id": 9, "name": "Intel Core i9", "price": 1000.00, "quantity": 5, "cores": 12, "clock_speed": 4.8},
+    {"id": 10, "name": "NVIDIA GeForce RTX 3060", "price": 550.00, "quantity": 7, "memory_size": 8, "gpu_speed": 1700.0}
+]

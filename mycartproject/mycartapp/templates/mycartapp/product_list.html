@@ -1,0 +1,47 @@
+{% extends 'mycartapp/base.html' %}
+
+{% block content %}
+
+  <h2>Lista de Produse</h2>
+
+  <div class="info-box">
+    <p>Coș: {{ cart|length }} articole</p>
+    <p>Total: ${{ total_price }}</p>
+    <form method="post" action="{% url 'pay_now' %}">
+      {% csrf_token %}
+      <input type="submit" value="Plătește Acum">
+    </form>
+  </div>
+
+
+  {% if products %}
+    <table class="product-table">
+      <tr>
+        <td></td>
+        <td>
+          {% for product in products %}
+            <div class="product-box">
+              <div class="product-title-box">
+                <h3>{{ product.name }}</h3>
+              </div>
+              <p>Preț: ${{ product.price }}</p>
+              <p>Disponibile: {{ product.quantity }}</p>
+
+              <form method="post" action="{% url 'add_to_cart' %}">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="{{ product.id }}">
+                <label for="quantity">Cantitate:</label>
+                <input type="number" name="quantity" value="1" min="1" max="{{ product.quantity }}">
+                <button type="submit">Adaugă în Coș</button>
+              </form>
+            </div>
+          {% endfor %}
+        </td>
+        <td></td>
+      </tr>
+    </table>
+  {% else %}
+    <p>Nu există produse disponibile în acest moment.</p>
+  {% endif %}
+
+{% endblock %}

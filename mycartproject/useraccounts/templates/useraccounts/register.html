@@ -1,0 +1,29 @@
+{% extends 'mycartapp/base.html' %}
+
+{% block content %}
+  <h2>Creează un cont</h2>
+  <form method="post" action="{% url 'useraccounts:register' %}">
+    {% csrf_token %}
+
+    {% if form.errors %}
+      <div style="color: red; margin-bottom: 10px;">
+        <p>Există erori în formular. Te rugăm să le corectezi:</p>
+        <ul>
+          {% for field, errors in form.errors.items %}
+            <li>{{ field }}:
+              <ul>
+                {% for error in errors %}
+                  <li>{{ error }}</li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+    {{ form.as_p }}
+
+    <button type="submit">Înregistrează-te</button>
+  </form>
+{% endblock %}

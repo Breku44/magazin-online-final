@@ -1,0 +1,25 @@
+{% extends 'mycartapp/base.html' %}
+
+{% block content %}
+    <h1>Bine ați venit la Blogul Nostru - Piese de Calculator de Vânzare</h1>
+
+    <div class="announcement-box">
+        <p>Avem o ofertă specială la procesoare de performanță înaltă. Verificați-le acum!</p>
+        <h2><a href="{% url 'announcement1' %}">Vezi Acum</a></h2>
+    </div>
+
+    <div class="announcement-box">
+        <p>Îmbunătățiți-vă experiența de gaming cu cele mai recente plăci video. Stoc limitat disponibil!</p>
+        <h2><a href="{% url 'announcement2' %}">Vezi Acum</a></h2>
+
+    </div>
+
+    <style>
+        .announcement-box {
+            background-color: #C0C0C0;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+    </style>
+{% endblock %}

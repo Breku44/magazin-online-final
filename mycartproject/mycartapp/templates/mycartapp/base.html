@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Coșul Meu Online{% endblock %}</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            background-color: black;
+            border-radius: 5px;
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            flex: 1;
+        }
+
+        .product-table {
+            width: 100%;
+            text-align: center;
+        }
+
+        .product-box {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            width: 250px;
+            text-align: center;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .product-title-box {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 8px 8px 0 0;
+            width: 100%; /
+        }
+
+        .info-box {
+            background-color: #2196F3;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .payment-info {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Coșul Meu Online</h1>
+        <nav>
+            <ul>
+                <li><a href="/home">Acasă</a></li>
+                <li><a href="/mycart/products/">Lista de Produse</a></li>
+                <li><a href="{% url 'blog' %}">Blog</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <table class="product-table">
+            <tr>
+                <td></td>
+                <td>
+                    {% block content %}{% endblock %}
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Coșul Meu Online</p>
+    </footer>
+
+</body>
+</html>
