@@ -46,11 +46,8 @@ def register_user(request):
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('useraccounts:registration_complete')
+            return redirect('useraccounts:login')
     else:
         form = UserRegistrationForm()
 
     return render(request, 'useraccounts/register.html', {'form': form})
-
-def registration_complete(request):
-    return render(request, 'useraccounts/registration_complete.html')

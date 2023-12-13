@@ -102,6 +102,7 @@
         }
 
     </style>
+
 </head>
 <body>
 
@@ -112,7 +113,11 @@
                 <li><a href="/home">Acasă</a></li>
                 <li><a href="/mycart/products/">Lista de Produse</a></li>
                 <li><a href="{% url 'blog' %}">Blog</a></li>
-
+                <li style="margin-left: auto; padding: 10px;">
+                {% if user.is_authenticated %}
+                    <p style="margin: 5; color: white; background-color: #282828; padding: 5px; border-radius: 5px;">Autentificat ca {{ user.username }}</p>
+                {% endif %}
+            </li>
             </ul>
         </nav>
     </header>
